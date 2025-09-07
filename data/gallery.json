@@ -1,0 +1,31 @@
+{
+  "photos": [
+    {
+      "title": "Antena en edificio A",
+      "url": "https://placehold.co/1200x800/png",
+      "caption": "Protección con pastilla y tierra física."
+    },
+    {
+      "title": "Rack y MikroTik",
+      "url": "https://placehold.co/1200x800/png",
+      "caption": "Balanceo de 2 enlaces y QoS."
+    },
+    {
+      "title": "Zona WiFi",
+      "url": "https://placehold.co/1200x800/png",
+      "caption": "Cobertura en patio escolar."
+    }
+  ],
+  "videos": [
+    {
+      "title": "Cómo generar fichas",
+      "youtube": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "caption": "Demo del portal hotspot."
+    },
+    {
+      "title": "Topología base",
+      "youtube": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "caption": "Recorrido por la instalación mínima."
+    }
+  ]
+}

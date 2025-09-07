@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ISyRE | Internet satelital y redes administradas</title>
+  <meta name="description" content="ISyRE: instalación de internet administrado, malla WiFi, MikroTik, enlaces Ubiquiti y hotspot con fichas. Respuesta <1h por WhatsApp." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b1220;        /* fondo oscuro elegante */
+      --card:#0f1a2e;      /* tarjetas */
+      --brand:#2ac06d;     /* verde tech */
+      --brand-2:#2aa1ff;   /* azul tech */
+      --text:#e8eef8;      /* texto principal */
+      --muted:#9eb0c7;     /* texto secundario */
+      --accent:#ffd166;    /* acento sutil */
+      --radius:18px;
+      --shadow:0 8px 28px rgba(0,0,0,.35);
+      --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;line-height:1.4}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:var(--maxw);margin-inline:auto;padding:24px}
+    header{position:sticky;top:0;backdrop-filter:saturate(180%) blur(8px);background:rgba(11,18,32,.7);border-bottom:1px solid rgba(255,255,255,.06);z-index:50}
+    nav{display:flex;align-items:center;gap:18px;justify-content:space-between}
+    .logo{display:flex;align-items:center;gap:10px}
+    .logo img{width:42px;height:42px;border-radius:10px;box-shadow:var(--shadow)}
+    .brand{font-weight:700;letter-spacing:.2px}
+    .nav-links{display:flex;gap:18px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:linear-gradient(180deg,#19263f,#111a2c);color:var(--text);box-shadow:var(--shadow)}
+    .btn:hover{border-color:rgba(255,255,255,.3)}
+    .btn.whatsapp{background:linear-gradient(180deg,#1f3a2b,#14261d);border-color:#2ac06d}
+    .badge{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.15);font-size:12px;color:var(--muted)}
+
+    /* HERO */
+    .hero{padding:56px 0}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .9fr;gap:32px}
+    .title{font-size:42px;line-height:1.1;margin:0 0 10px;font-weight:800}
+    .muted{color:var(--muted)}
+    .kpis{display:flex;gap:16px;flex-wrap:wrap;margin-top:18px}
+    .kpi{background:var(--card);padding:14px 16px;border-radius:14px;border:1px solid rgba(255,255,255,.06)}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .card.pad{padding:18px}
+
+    /* SECTION */
+    section{padding:28px 0}
+    h2{font-size:28px;margin:0 0 12px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    @media (max-width:980px){
+      .hero-grid,.grid-3,.grid-2{grid-template-columns:1fr}
+    }
+    .list{margin:0;padding-left:18px;color:var(--muted)}
+    .pill{display:inline-block;border:1px solid rgba(255,255,255,.15);padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;color:var(--muted);font-size:13px}
+
+    /* TOPOLOGY */
+    .topology{padding:12px;background:#0b1426;border-radius:16px;border:1px solid rgba(255,255,255,.06)}
+
+    /* GALLERY */
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .gallery figure{border:1px solid rgba(255,255,255,.06);border-radius:14px;overflow:hidden;background:#0b1426}
+    .gallery figcaption{padding:10px;color:var(--muted);font-size:13px}
+
+    /* FAQ */
+    details{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:14px;margin:10px 0}
+    summary{cursor:pointer;padding:14px 16px;font-weight:600}
+    details > div{padding:0 16px 14px;color:var(--muted)}
+
+    footer{border-top:1px solid rgba(255,255,255,.08);margin-top:36px}
+    .foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:18px}
+    .tiny{font-size:12px;color:var(--muted)}
+
+    /* floating whatsapp (optional) */
+    .fab{position:fixed;right:18px;bottom:18px;background:#25D366;color:#111;padding:14px 16px;border-radius:999px;font-weight:700;box-shadow:var(--shadow);display:none}
+    .fab.show{display:inline-flex}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <img src="isyre_logo.png" alt="ISyRE logo" onerror="this.style.display='none'">
+          <span class="brand">ISyRE</span>
+        </div>
+        <div class="nav-links">
+          <a href="#soluciones">Soluciones</a>
+          <a href="#proyectos">Proyectos</a>
+          <a href="#galeria">Galería</a>
+          <a href="#faq">FAQs</a>
+          <a href="#contacto" class="btn">Contacto</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="badge">Respuesta por WhatsApp &lt; 1h • Instalamos en toda la República Mexicana</div>
+          <h1 class="title">Internet administrado y redes para <span style="color:var(--brand)">escuelas</span>, <span style="color:var(--brand-2)">comunidades</span> y <span style="color:var(--accent)">negocios</span>.</h1>
+          <p class="muted">Si el internet no llega, lo llevamos por vía satelital. Si ya tienes internet, lo hacemos confiable: balanceo, seguridad y cobertura total con malla WiFi.</p>
+          <div class="kpis">
+            <div class="kpi">Pólizas desde <strong>$1,250 MXN</strong>/mes</div>
+            <div class="kpi">Hotspot con fichas por tiempo</div>
+            <div class="kpi">MikroTik • Ubiquiti • Fibra/Radio</div>
+          </div>
+          <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+            <a href="#contacto" class="btn whatsapp">Hablar por WhatsApp</a>
+            <a href="#topologia" class="btn">Ver topología mínima</a>
+          </div>
+        </div>
+        <div class="card pad">
+          <!-- Topología mínima SVG -->
+          <h3 style="margin:0 0 8px">Topología mínima</h3>
+          <div id="topologia" class="topology">
+            <svg viewBox="0 0 820 360" width="100%" height="auto" aria-label="Diagrama de topología mínima">
+              <defs>
+                <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#2aa1ff"/>
+                  <stop offset="100%" stop-color="#2ac06d"/>
+                </linearGradient>
+              </defs>
+              <!-- Nube sat / ISP -->
+              <g>
+                <ellipse cx="110" cy="70" rx="80" ry="40" fill="#142642" stroke="#2aa1ff"/>
+                <text x="110" y="75" text-anchor="middle" fill="#cfe6ff" font-size="14">Internet</text>
+              </g>
+              <!-- MikroTik -->
+              <rect x="290" y="45" width="140" height="50" rx="10" fill="#142642" stroke="#2ac06d"/>
+              <text x="360" y="75" text-anchor="middle" fill="#cfe6ff" font-size="14">Router MikroTik</text>
+              <line x1="190" y1="70" x2="290" y2="70" stroke="url(#g1)" stroke-width="3"/>
+              <!-- AP/Antena malla -->
+              <rect x="540" y="40" width="130" height="60" rx="10" fill="#142642" stroke="#2aa1ff"/>
+              <text x="605" y="72" text-anchor="middle" fill="#cfe6ff" font-size="14">AP / Antena</text>
+              <line x1="430" y1="70" x2="540" y2="70" stroke="url(#g1)" stroke-width="3"/>
+              <!-- Clientes -->
+              <circle cx="740" cy="70" r="12" fill="#2ac06d"/>
+              <text x="770" y="75" fill="#cfe6ff" font-size="13">Zona WiFi</text>
+              <!-- Hotspot servidor/control ancho -->
+              <rect x="300" y="160" width="160" height="60" rx="10" fill="#142642" stroke="#ffd166"/>
+              <text x="380" y="190" text-anchor="middle" fill="#ffe7b0" font-size="14">Hotspot & Control</text>
+              <line x1="360" y1="95" x2="380" y2="160" stroke="#ffd166" stroke-width="2" stroke-dasharray="6 6"/>
+              <!-- Póliza / monitoreo -->
+              <rect x="40" y="150" width="190" height="60" rx="10" fill="#142642" stroke="#9eb0c7"/>
+              <text x="135" y="185" text-anchor="middle" fill="#cfe6ff" font-size="14">Monitoreo 24/7</text>
+              <line x1="135" y1="150" x2="320" y2="70" stroke="#9eb0c7" stroke-width="2" stroke-dasharray="6 6"/>
+            </svg>
+          </div>
+          <p class="muted" style="margin-top:10px">Instalación base: bajada de internet (sat/ISP) → MikroTik → AP/Antena → Hotspot con fichas. Mantenimiento y monitoreo incluidos en la póliza.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOLUCIONES -->
+    <section id="soluciones">
+      <div class="container">
+        <h2>Soluciones</h2>
+        <p class="muted">Ofrecemos redes, administración, instalación y soporte. Si tu zona no tiene internet, lo llevamos por vía satelital; si ya tienes, lo estabilizamos y ampliamos cobertura.</p>
+        <div id="svc" class="grid-3"></div>
+        <div style="margin-top:10px">
+          <span class="pill">Pólizas desde $1,250 MXN/mes</span>
+          <span class="pill">SLA simple: respuesta &lt; 1h</span>
+          <span class="pill">Instalamos en toda la República</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROYECTOS (resumen) -->
+    <section id="proyectos">
+      <div class="container">
+        <h2>Proyectos</h2>
+        <div id="projects" class="grid-2"></div>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section id="galeria">
+      <div class="container">
+        <h2>Galería</h2>
+        <div id="photos" class="gallery"></div>
+        <h3 style="margin-top:18px">Videos</h3>
+        <div id="videos" class="grid-2"></div>
+        <p class="tiny muted">Recomendación fotos: 1200×800 px (relación 3:2) para mantener un grid uniforme. Peso &lt; 250 KB por imagen.</p>
+      </div>
+    </section>
+
+    <!-- FAQs -->
+    <section id="faq">
+      <div class="container">
+        <h2>Preguntas frecuentes</h2>
+        <div id="faqs"></div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto">
+      <div class="container">
+        <h2>Contacto</h2>
+        <div class="grid-2">
+          <div class="card pad">
+            <h3>Hablemos</h3>
+            <p class="muted">Tel: <span id="tel">(229) XXX XXXX</span> · Email: <span id="mail">contacto@isyre.com</span></p>
+            <p class="muted">Base para viáticos: Veracruz, Ver. (cobramos según zona).</p>
+            <a class="btn whatsapp" href="https://wa.me/5210000000000" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+          </div>
+          <div class="card pad">
+            <h3>Formulario</h3>
+            <p class="muted">Integra aquí tu formulario de Google (iframe):</p>
+            <div style="aspect-ratio:16/9;background:#0b1426;border:1px dashed rgba(255,255,255,.15);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--muted)">[Iframe de Google Forms]</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot">
+      <div>
+        <div class="brand" style="margin-bottom:8px">ISyRE</div>
+        <p class="tiny">Redes administradas, hotspot con fichas, enlaces Ubiquiti, MikroTik, WiFi/cableado. Instalamos en toda la República Mexicana.</p>
+        <p class="tiny">© <span id="year"></span> ISyRE. Aviso de Privacidad • Términos del Servicio</p>
+      </div>
+      <div>
+        <div class="tiny">Redes sociales</div>
+        <div style="display:flex;gap:10px;margin-top:6px" id="socials"></div>
+      </div>
+      <div>
+        <div class="tiny">Atención</div>
+        <div class="tiny">Soporte WhatsApp: 8:00–18:00 h • Emergencias fuera de horario</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FAB WhatsApp opcional (activar por config) -->
+  <a id="fab" class="fab" href="https://wa.me/5210000000000" target="_blank" rel="noopener">WhatsApp</a>
+
+  <!-- Config JSON embebido (editable) -->
+  <script type="application/json" id="config-services">
+  {
+    "items": [
+      {"title":"Internet administrado con hotspot","desc":"Control de acceso por fichas (minutos/horas/días), límite de ancho de banda por usuario y reportes.","bullets":["Portal cautivo","Códigos impresos/QR","Perfiles por tiempo"],"cta":"Cotizar"},
+      {"title":"MikroTik: balanceo, failover y seguridad","desc":"Unimos tus enlaces (fibra/sat/4G) y priorizamos tráfico crítico para clases y oficinas.","bullets":["Load balancing","Failover automático","Firewall+QoS"],"cta":"Asesoría"},
+      {"title":"Enlaces Ubiquiti y malla WiFi","desc":"Cobertura multi-edificio con antenas y puntos de acceso gestionados.","bullets":["Plan de cobertura","Roaming estable","PoE y protección"],"cta":"Diseñar cobertura"}
+    ]
+  }
+  </script>
+
+  <script type="application/json" id="config-projects">
+  {
+    "items": [
+      {"title":"COBAEV 17 (en implementación)","desc":"2 enlaces de fibra → MikroTik → malla WiFi 3 edificios, con No-Break y protección contra descargas.","image":"https://placehold.co/800x480/png","href":"#"},
+      {"title":"Escuela rural (piloto satelital)","desc":"Acceso vía antena satelital, hotspot con fichas y control de ancho por usuario.","image":"https://placehold.co/800x480/png","href":"#"}
+    ]
+  }
+  </script>
+
+  <script type="application/json" id="config-gallery">
+  {
+    "photos": [
+      {"title":"Antena en edificio A","url":"https://placehold.co/1200x800/png","caption":"Protección con pastilla y tierra física."},
+      {"title":"Rack y MikroTik","url":"https://placehold.co/1200x800/png","caption":"Balanceo de 2 enlaces y QoS."},
+      {"title":"Zona WiFi","url":"https://placehold.co/1200x800/png","caption":"Cobertura en patio escolar."}
+    ],
+    "videos": [
+      {"title":"Cómo generar fichas","youtube":"https://www.youtube.com/embed/dQw4w9WgXcQ","caption":"Demo del portal hotspot."},
+      {"title":"Topología base","youtube":"https://www.youtube.com/embed/dQw4w9WgXcQ","caption":"Recorrido por la instalación mínima."}
+    ]
+  }
+  </script>
+
+  <script type="application/json" id="config-faqs">
+  {
+    "items": [
+      {"q":"¿Se puede vender internet con fichas?","a":"Sí. Implementamos hotspot con fichas por minutos/horas/días y control de ancho de banda por usuario."},
+      {"q":"¿Qué incluye la póliza?","a":"Monitoreo, soporte remoto (8–18 h), emergencias fuera de horario y visitas con costo de viáticos. Desde $1,250 MXN/mes."},
+      {"q":"¿Instalan fuera de Veracruz?","a":"Sí, instalamos en toda la República. Los viáticos se cotizan según la zona; nuestra base es Veracruz, Ver."},
+      {"q":"¿Qué pasa si ya tengo internet?","a":"Integramos tus enlaces a MikroTik con balanceo/failover, mejoramos seguridad y extendemos cobertura con malla WiFi."}
+    ]
+  }
+  </script>
+
+  <script type="application/json" id="config-site">
+  {
+    "phone":"(229) 000 0000",
+    "email":"ceo@isyre.com",
+    "whatsapp":"5210000000000",
+    "floating_whatsapp": false, 
+    "socials":[
+      {"label":"TikTok","href":"#"},
+      {"label":"Instagram","href":"#"},
+      {"label":"Facebook","href":"#"},
+      {"label":"MercadoLibre","href":"#"}
+    ]
+  }
+  </script>
+
+  <script>
+    // Helpers to mount cards from JSON configs
+    function $(sel,root=document){return root.querySelector(sel)}
+    function el(tag,cls){const e=document.createElement(tag); if(cls) e.className=cls; return e}
+
+    // Services
+    const svcData = JSON.parse($('#config-services').textContent).items
+    const svcWrap = $('#svc')
+    svcData.forEach(s=>{
+      const card = el('div','card pad')
+      const h = el('h3'); h.textContent = s.title; card.appendChild(h)
+      const p = el('p'); p.className='muted'; p.textContent = s.desc; card.appendChild(p)
+      const ul = el('ul'); ul.className='list'; s.bullets.forEach(b=>{const li=el('li'); li.textContent=b; ul.appendChild(li)})
+      card.appendChild(ul)
+      const a = el('a','btn'); a.href='#contacto'; a.textContent=s.cta; a.style.marginTop='10px'
+      card.appendChild(a)
+      svcWrap.appendChild(card)
+    })
+
+    // Projects
+    const projData = JSON.parse($('#config-projects').textContent).items
+    const projWrap = $('#projects')
+    projData.forEach(p=>{
+      const card = el('div','card')
+      const img = el('img'); img.src=p.image; img.alt=p.title; card.appendChild(img)
+      const box = el('div','pad'); const h=el('h3'); h.textContent=p.title; box.appendChild(h)
+      const d=el('p'); d.className='muted'; d.textContent=p.desc; box.appendChild(d)
+      card.appendChild(box); projWrap.appendChild(card)
+    })
+
+    // Gallery photos
+    const gal = JSON.parse($('#config-gallery').textContent)
+    const photosWrap = $('#photos')
+    gal.photos.forEach(ph=>{
+      const fig = el('figure');
+      const img = el('img'); img.src=ph.url; img.alt=ph.title; fig.appendChild(img)
+      const cap = el('figcaption'); cap.innerHTML = `<strong>${ph.title}</strong><br>${ph.caption}`; fig.appendChild(cap)
+      photosWrap.appendChild(fig)
+    })
+    // Videos
+    const vidsWrap = $('#videos')
+    gal.videos.forEach(v=>{
+      const card = el('div','card pad')
+      const h = el('h4'); h.textContent=v.title; card.appendChild(h)
+      const box = el('div'); box.style.aspectRatio='16/9'; box.style.border='1px solid rgba(255,255,255,.08)'; box.style.borderRadius='12px'; box.style.overflow='hidden'; box.style.background='#0b1426'
+      box.innerHTML = `<iframe width="100%" height="100%" src="${v.youtube}" title="${v.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
+      card.appendChild(box)
+      const p = el('p'); p.className='muted'; p.textContent=v.caption; card.appendChild(p)
+      vidsWrap.appendChild(card)
+    })
+
+    // FAQs
+    const faqData = JSON.parse($('#config-faqs').textContent).items
+    const faqWrap = $('#faqs')
+    faqData.forEach(f=>{
+      const det = el('details'); const sum = el('summary'); sum.textContent=f.q; det.appendChild(sum)
+      const div=el('div'); div.textContent=f.a; det.appendChild(div); faqWrap.appendChild(det)
+    })
+
+    // Site config (contact + socials)
+    const site = JSON.parse($('#config-site').textContent)
+    $('#tel').textContent = site.phone
+    $('#mail').textContent = site.email
+    const waLinks = document.querySelectorAll('[href^="https://wa.me/"]')
+    waLinks.forEach(a=>a.href = `https://wa.me/${site.whatsapp}`)
+    const fab = $('#fab'); if(site.floating_whatsapp) fab.classList.add('show')
+    const socials = $('#socials'); site.socials.forEach(s=>{const a=el('a','pill'); a.href=s.href; a.target='_blank'; a.textContent=s.label; socials.appendChild(a)})
+    $('#year').textContent = new Date().getFullYear()
+  </script>
+</body>
+</html>

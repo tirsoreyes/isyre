@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Galería | ISyRE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header><div class="header-slot"></div></header>
+  <main>
+  
+<section id="galeria">
+  <div class="container">
+    <h2>Galería</h2>
+    <div id="photos" class="gallery"></div>
+    <h3 style="margin-top:18px">Videos</h3>
+    <div id="videos" class="grid-2"></div>
+    <p class="tiny muted">Recomendación fotos: 1200×800 px (relación 3:2) y &lt; 250 KB.</p>
+  </div>
+</section>
+<script>buildGallery();</script>
+
+  </main>
+  <footer><div class="footer-slot"></div></footer>
+  <a id="fab" class="fab" href="#" target="_blank" rel="noopener">WhatsApp</a>
+  <script src="assets/js/app.js"></script>
+  <script>mountHeader('galeria');</script>
+</body>
+</html>

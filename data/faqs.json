@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "q": "¿Se puede vender internet con fichas?",
+      "a": "Sí. Implementamos hotspot con fichas por minutos/horas/días y control de ancho de banda por usuario."
+    },
+    {
+      "q": "¿Qué incluye la póliza?",
+      "a": "Monitoreo, soporte remoto (8–18 h), emergencias fuera de horario y visitas con costo de viáticos. Desde $1,250 MXN/mes."
+    },
+    {
+      "q": "¿Instalan fuera de Veracruz?",
+      "a": "Sí, instalamos en toda la República. Los viáticos se cotizan según la zona; nuestra base es Veracruz, Ver."
+    },
+    {
+      "q": "¿Qué pasa si ya tengo internet?",
+      "a": "Integramos tus enlaces a MikroTik con balanceo/failover, mejoramos seguridad y extendemos cobertura con malla WiFi."
+    }
+  ]
+}

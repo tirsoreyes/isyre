@@ -1,0 +1,24 @@
+{
+  "phone": "(229) 000 0000",
+  "email": "ceo@isyre.com",
+  "whatsapp": "5210000000000",
+  "floating_whatsapp": false,
+  "socials": [
+    {
+      "label": "TikTok",
+      "href": "#"
+    },
+    {
+      "label": "Instagram",
+      "href": "#"
+    },
+    {
+      "label": "Facebook",
+      "href": "#"
+    },
+    {
+      "label": "MercadoLibre",
+      "href": "#"
+    }
+  ]
+}

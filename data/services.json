@@ -1,0 +1,34 @@
+{
+  "items": [
+    {
+      "title": "Internet administrado con hotspot",
+      "desc": "Control de acceso por fichas (minutos/horas/días), límite de ancho de banda por usuario y reportes.",
+      "bullets": [
+        "Portal cautivo",
+        "Códigos impresos/QR",
+        "Perfiles por tiempo"
+      ],
+      "cta": "Cotizar"
+    },
+    {
+      "title": "MikroTik: balanceo, failover y seguridad",
+      "desc": "Unimos tus enlaces (fibra/sat/4G) y priorizamos tráfico crítico para clases y oficinas.",
+      "bullets": [
+        "Load balancing",
+        "Failover automático",
+        "Firewall+QoS"
+      ],
+      "cta": "Asesoría"
+    },
+    {
+      "title": "Enlaces Ubiquiti y malla WiFi",
+      "desc": "Cobertura multi-edificio con antenas y puntos de acceso gestionados.",
+      "bullets": [
+        "Plan de cobertura",
+        "Roaming estable",
+        "PoE y protección"
+      ],
+      "cta": "Diseñar cobertura"
+    }
+  ]
+}

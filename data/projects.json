@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "title": "COBAEV 17 (en implementación)",
+      "desc": "2 enlaces de fibra → MikroTik → malla WiFi 3 edificios, con No-Break y protección contra descargas.",
+      "image": "https://placehold.co/800x480/png",
+      "href": "#"
+    },
+    {
+      "title": "Escuela rural (piloto satelital)",
+      "desc": "Acceso vía antena satelital, hotspot con fichas y control de ancho por usuario.",
+      "image": "https://placehold.co/800x480/png",
+      "href": "#"
+    }
+  ]
+}
