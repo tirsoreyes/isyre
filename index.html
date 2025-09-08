@@ -15,7 +15,7 @@
   <div class="container hero-grid">
     <div>
       <div class="badge">Respuesta por WhatsApp &lt; 1h • Instalamos en toda la República Mexicana</div>
-      <h1 class="title">Internet administrado y redes para <span style="color:var(--brand)">escuelas</span>, <span style="color:var(--brand-2)">comunidades</span> y <span style="color:var(--accent)">negocios</span>.</h1>
+  <h1 class="title">Internet administrado y redes para <span style="color:var(--brand)">escuelas</span>, <span style="color:#374151">comunidades</span> y <span style="color:var(--accent)">negocios</span>.</h1>
       <p class="muted">Si el internet no llega, lo llevamos por vía satelital. Si ya tienes internet, lo hacemos confiable: balanceo, seguridad y cobertura total con malla WiFi.</p>
       <div class="kpis">
         <div class="kpi">Pólizas desde <strong>$1,250 MXN</strong>/mes</div>
@@ -29,31 +29,14 @@
     </div>
     <div class="card pad">
       <h3 style="margin:0 0 8px">Topología mínima</h3>
-      <div class="topology">
-        <svg viewBox="0 0 820 360" width="100%" height="auto" aria-label="Diagrama de topología mínima">
-          <defs>
-            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#2aa1ff"/><stop offset="100%" stop-color="#2ac06d"/>
-            </linearGradient>
-          </defs>
-          <ellipse cx="110" cy="70" rx="80" ry="40" fill="#142642" stroke="#2aa1ff"/>
-          <text x="110" y="75" text-anchor="middle" fill="#cfe6ff" font-size="14">Internet</text>
-          <rect x="290" y="45" width="140" height="50" rx="10" fill="#142642" stroke="#2ac06d"/>
-          <text x="360" y="75" text-anchor="middle" fill="#cfe6ff" font-size="14">Router MikroTik</text>
-          <line x1="190" y1="70" x2="290" y2="70" stroke="url(#g1)" stroke-width="3"/>
-          <rect x="540" y="40" width="130" height="60" rx="10" fill="#142642" stroke="#2aa1ff"/>
-          <text x="605" y="72" text-anchor="middle" fill="#cfe6ff" font-size="14">AP / Antena</text>
-          <line x1="430" y1="70" x2="540" y2="70" stroke="url(#g1)" stroke-width="3"/>
-          <circle cx="740" cy="70" r="12" fill="#2ac06d"/><text x="770" y="75" fill="#cfe6ff" font-size="13">Zona WiFi</text>
-          <rect x="300" y="160" width="160" height="60" rx="10" fill="#142642" stroke="#ffd166"/>
-          <text x="380" y="190" text-anchor="middle" fill="#ffe7b0" font-size="14">Hotspot & Control</text>
-          <line x1="360" y1="95" x2="380" y2="160" stroke="#ffd166" stroke-width="2" stroke-dasharray="6 6"/>
-          <rect x="40" y="150" width="190" height="60" rx="10" fill="#142642" stroke="#9eb0c7"/>
-          <text x="135" y="185" text-anchor="middle" fill="#cfe6ff" font-size="14">Monitoreo 24/7</text>
-          <line x1="135" y1="150" x2="320" y2="70" stroke="#9eb0c7" stroke-width="2" stroke-dasharray="6 6"/>
-        </svg>
+      <div class="topology" style="text-align:center;">
+        <img id="topologia-img" src="assets/img/topologia_base.png" alt="Topología mínima" style="max-width:100%;cursor:pointer;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.08);transition:box-shadow .2s;" title="Haz clic para ampliar">
       </div>
       <p class="muted" style="margin-top:10px">Instalación base: bajada de internet (sat/ISP) → MikroTik → AP/Antena → Hotspot con fichas. Mantenimiento y monitoreo incluidos en la póliza.</p>
+    </div>
+    <!-- Modal para ampliar imagen -->
+    <div id="modal-topologia" style="display:none;position:fixed;z-index:9999;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;">
+      <img src="assets/img/topologia_base.png" alt="Topología mínima ampliada" style="max-width:90vw;max-height:90vh;border-radius:18px;box-shadow:0 4px 32px rgba(0,0,0,0.25);background:#fff;">
     </div>
   </div>
 </section>

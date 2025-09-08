@@ -124,4 +124,16 @@ async function fillContact(){
 document.addEventListener('DOMContentLoaded', ()=>{
   // Footer mount on every page
   mountFooter()
+
+  // Modal para topología mínima (index.html)
+  const topologiaImg = document.getElementById('topologia-img');
+  const modalTopologia = document.getElementById('modal-topologia');
+  if(topologiaImg && modalTopologia){
+    topologiaImg.addEventListener('click', ()=>{
+      modalTopologia.style.display = 'flex';
+    });
+    modalTopologia.addEventListener('click', ()=>{
+      modalTopologia.style.display = 'none';
+    });
+  }
 })
