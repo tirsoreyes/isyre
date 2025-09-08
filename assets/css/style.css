@@ -14,11 +14,7 @@
 *{box-sizing:border-box}
 html,body{
   margin:0;
-  background:var(--bg) url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80') no-repeat center top fixed;
-  background-image: var(--bg), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80');
-  background-image: var(--bg), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80');
-  background-image: var(--bg), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80');
-  background-image: var(--bg), url('https://images.unsplash.com/photo-3GpK31icMtg?auto=format&fit=crop&w=1500&q=80');
+  background:var(--bg) url('../img/chuttersnap-unsplash.jpg') no-repeat center top fixed;
   background-size:cover;
   color:var(--text);
   font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;
@@ -36,9 +32,26 @@ header{
 }
 nav{display:flex;align-items:center;gap:18px;justify-content:space-between}
 .logo{display:flex;align-items:center;gap:10px}
-.logo img{width:42px;height:42px;border-radius:10px;box-shadow:var(--shadow)}
-.brand{font-weight:700;letter-spacing:.2px}
-.nav-links{display:flex;gap:18px;flex-wrap:wrap}
+.logo img{width:64px;height:64px;border-radius:14px;box-shadow:var(--shadow)}
+.brand{
+  font-size:2.2rem;
+  font-weight:900;
+  letter-spacing:.2px;
+  text-transform:uppercase;
+  margin-left:8px;
+}
+.nav-links{
+  display:flex;
+  gap:28px;
+  flex-wrap:wrap;
+  font-size:1.18rem;
+  font-weight:700;
+  text-transform:uppercase;
+}
+.nav-links a{
+  font-weight:700;
+  letter-spacing:.5px;
+}
 .nav-links a.active{color:var(--brand)}
 .btn{
   display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:14px;
