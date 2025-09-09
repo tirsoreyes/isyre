@@ -2,7 +2,7 @@
   "photos": [
     {
       "title": "Antena en edificio A",
-      "url": "https://placehold.co/1200x800/png",
+      "url": "assets/img/patio2.png",
       "caption": "Protección con pastilla y tierra física."
     },
     {
@@ -12,7 +12,7 @@
     },
     {
       "title": "Zona WiFi",
-      "url": "https://placehold.co/1200x800/png",
+      "url": "assets/img/patio1.png",
       "caption": "Cobertura en patio escolar."
     }
   ],
