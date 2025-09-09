@@ -18,14 +18,14 @@
   ],
   "videos": [
     {
-      "title": "Cómo generar fichas",
-      "youtube": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      "caption": "Demo del portal hotspot."
+      "title": "configuracion con una linea de internet de respaldo",
+      "youtube": "https://www.youtube.com/embed/-EZIkgBO98I",
+      "caption": "pioneros en la configuracion de equipos de red."
     },
     {
-      "title": "Topología base",
-      "youtube": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      "caption": "Recorrido por la instalación mínima."
+      "title": "Respaldo de energia (No aplica en sistemas starlink)",
+      "youtube": "https://www.youtube.com/embed/BseHvv4pvS0",
+      "caption": "respaldo de energia basica."
     }
   ]
 }
