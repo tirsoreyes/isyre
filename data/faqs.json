@@ -15,6 +15,26 @@
     {
       "q": "¿Qué pasa si ya tengo internet?",
       "a": "Integramos tus enlaces a MikroTik con balanceo/failover, mejoramos seguridad y extendemos cobertura con malla WiFi."
+    },
+    {
+      "q": "¿Es necesario tener conocimiento?",
+      "a": "No, Nosotros te capacitamos en el uso y generacion de fichas ademas de brindarte links de video tutoriales."
+    },
+    {
+      "q": "¿Por que ISyRE?",
+      "a": "Por que a diferencia de otros servicios que hay en el mercado, ISyRE siempre sera tu apoyo para crecer mas en tu zona o dar una solucion en redes para cualquier proyecto."
+    },
+    {
+      "q": "¿Que cubre mi inversion?",
+      "a": "Los equipos (son propiedad del cliente que invirtio),mano de obra de instalacion y viaticos."
+    },
+    {
+      "q": "¿Apartir de que momento empiezo a ganar dinero?",
+      "a": "Desde la primera ficha que vendes."
+    },
+    {
+      "q": "¿Es redituable como negocio?",
+      "a": "Vender la comunicacion siempre es redituable un ejemplo cercano son las recargas, la desventaja es que tiene un limite de megas el paquete, y con nuestro sistema no hay limite de megas solo limite de tiempo que el usuario contrate."
     }
   ]
 }
