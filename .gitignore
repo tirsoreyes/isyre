@@ -1,0 +1,47 @@
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# System
+.DS_Store
+Thumbs.db
+
+# Build
+/dist/
+/build/
+*.log
+
+# VSCode
+.vscode/
+
+# Env
+.env
+.env.*
+
+# Misc
+*.swp
+*.swo
+
+# Output
+*.zip
+*.tar.gz
+
+# Mac
+Icon?
+
+# Others
+.idea/
+*.bak
+*.tmp
+
+# Coverage
+coverage/
+
+# Static site generators
+.cache/
+public/
+
+# Ignore data backups
+*.bak
+*.old

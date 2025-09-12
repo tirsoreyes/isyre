@@ -15,17 +15,16 @@ function mountHeader(activeId){
   container.innerHTML = `
     <div class="container">
       <nav>
-        <div class="logo">
+        <a href="index.html" class="logo">
           <img src="${logo}" alt="ISyRE logo" onerror="this.style.display='none'">
           <span class="brand">ISyRE</span>
-        </div>
+        </a>
         <div class="nav-links">
-          <a data-id="home" href="index.html">Inicio</a>
           <a data-id="soluciones" href="soluciones.html">Soluciones</a>
           <a data-id="proyectos" href="proyectos.html">Proyectos</a>
           <a data-id="galeria" href="galeria.html">Galería</a>
           <a data-id="faq" href="faq.html">FAQs</a>
-          <a data-id="contacto" href="contacto.html" class="btn">Contacto</a>
+          <a data-id="contacto" href="contacto.html">Contacto</a>
         </div>
       </nav>
     </div>`
@@ -125,4 +124,16 @@ async function fillContact(){
 document.addEventListener('DOMContentLoaded', ()=>{
   // Footer mount on every page
   mountFooter()
+
+  // Modal para topología mínima (index.html)
+  const topologiaImg = document.getElementById('topologia-img');
+  const modalTopologia = document.getElementById('modal-topologia');
+  if(topologiaImg && modalTopologia){
+    topologiaImg.addEventListener('click', ()=>{
+      modalTopologia.style.display = 'flex';
+    });
+    modalTopologia.addEventListener('click', ()=>{
+      modalTopologia.style.display = 'none';
+    });
+  }
 })
