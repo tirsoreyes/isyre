@@ -4,12 +4,7 @@
       "title": "Antena en edificio A",
       "url": "assets/img/patio2.png",
       "caption": "Protección con pastilla y tierra física."
-    },
-    {
-      "title": "Rack y MikroTik",
-      "url": "https://placehold.co/1200x800/png",
-      "caption": "Balanceo de 2 enlaces y QoS."
-    },
+    }, 
     {
       "title": "Zona WiFi",
       "url": "assets/img/patio1.png",
@@ -17,15 +12,21 @@
     }
   ],
   "videos": [
+
     {
-      "title": "configuracion con una linea de internet de respaldo",
-      "youtube": "https://www.youtube.com/embed/-EZIkgBO98I",
-      "caption": "pioneros en la configuracion de equipos de red."
+      "title": "Respaldo de energía (no aplica en sistemas Starlink)",
+      "youtube": "https://www.youtube.com/embed/BseHvv4pvS0",
+      "caption": "Respaldo de energía básica."
     },
     {
-      "title": "Respaldo de energia (No aplica en sistemas starlink)",
-      "youtube": "https://www.youtube.com/embed/BseHvv4pvS0",
-      "caption": "respaldo de energia basica."
+      "title": "Cómo generar tickets con el sistema de ISyRE.",
+      "youtube": "https://www.youtube.com/embed/7jrzqqEYyjo",
+      "caption": "En este video aprenderás cómo generar tickets."
+    },
+     {
+      "title": "Pruebas en proyecto de un plantel",
+      "youtube": "https://www.youtube.com/embed/swUEXJmQ0g0",
+      "caption": "Pruebas de navegación en dispositivo móvil."
     }
   ]
 }
