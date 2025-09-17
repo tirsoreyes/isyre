@@ -6,6 +6,7 @@
   <title>Proyectos | ISyRE</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/proyectos.css" />
 </head>
 <body>
   <header><div class="header-slot"></div></header>
@@ -14,14 +15,21 @@
 <section id="proyectos">
   <div class="container">
     <h2>Proyectos</h2>
-    <div id="projects" class="grid-2"></div>
+    <div id="projects" class="projects-list"></div>
   </div>
 </section>
-  </main>
-  <footer><div class="footer-slot"></div></footer>
-  <a id="fab" class="fab" href="#" target="_blank" rel="noopener">WhatsApp</a>
-  <script src="assets/js/app.js"></script>
-  <script>buildProjects();</script>
-  <script>mountHeader('proyectos');</script>
+</main>
+<!-- Modal para imagen ampliada (fuera de la sección para que cubra toda la pantalla) -->
+<div id="img-modal">
+  <button class="close-modal" title="Cerrar">&times;</button>
+  <img src="" alt="Imagen ampliada" />
+</div>
+<!-- Modal para video ampliado -->
+
+<footer><div class="footer-slot"></div></footer>
+<a id="fab" class="fab" href="#" target="_blank" rel="noopener">WhatsApp</a>
+<script src="assets/js/app.js"></script>
+<script>buildProjects();</script>
+<script>mountHeader('proyectos');</script>
 </body>
 </html>

@@ -1,16 +1,46 @@
 {
   "items": [
     {
-      "title": "COBAEV 17 (en implementación)",
-      "desc": "2 enlaces de fibra → MikroTik → malla WiFi 3 edificios, con No-Break y protección contra descargas.",
-      "image": "https://placehold.co/800x480/png",
-      "href": "#"
+      "titulo": "Proyecto Dummy 1",
+      "descripcion": "Este es un proyecto de ejemplo con imágenes y videos de prueba.",
+      "fotos": [
+        "assets/img/proyectos/patio1.png",
+        "assets/img/proyectos/patio2.png",
+        "assets/img/proyectos/patio1.png",
+        "assets/img/proyectos/patio2.png",
+        "assets/img/proyectos/patio1.png",
+        "assets/img/proyectos/patio2.png",
+        "assets/img/proyectos/patio1.png",
+        "assets/img/proyectos/patio2.png"
+      ],
+      "videos": [
+        "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        "https://www.youtube.com/watch?v=3JZ_D3ELwOQ",
+        "https://www.youtube.com/watch?v=3JZ_D3ELwOQ",
+        "https://www.youtube.com/watch?v=3JZ_D3ELwOQ"
+      
+      ]
     },
     {
-      "title": "Escuela rural (piloto satelital)",
-      "desc": "Acceso vía antena satelital, hotspot con fichas y control de ancho por usuario.",
-      "image": "https://placehold.co/800x480/png",
-      "href": "#"
+      "titulo": "Proyecto Dummy 2",
+      "descripcion": "Otro proyecto de ejemplo para pruebas de carrusel.",
+      "fotos": [
+        "assets/img/proyectos/patio2.png",
+        "assets/img/proyectos/patio2.png",
+        "assets/img/proyectos/patio1.png",
+        "assets/img/proyectos/patio2.png",
+        "assets/img/proyectos/patio1.png",
+        "assets/img/proyectos/patio2.png",
+        "assets/img/proyectos/patio1.png",
+        "assets/img/proyectos/patio2.png"
+      ],
+      "videos": [
+        "https://www.youtube.com/watch?v=3JZ_D3ELwOQ",
+        "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      ]
     }
   ]
 }

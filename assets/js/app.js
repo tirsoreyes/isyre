@@ -76,12 +76,72 @@ async function buildServices(){
 async function buildProjects(){
   const proj = await loadJSON('data/projects.json')
   const wrap = $('#projects')
-  proj.items.forEach(p=>{
-    const card = el('div','card')
-    const img = el('img'); img.src=p.image; img.alt=p.title; card.appendChild(img)
-    const box = el('div','pad'); const h=el('h3'); h.textContent=p.title; box.appendChild(h)
-    const d=el('p'); d.className='muted'; d.textContent=p.desc; box.appendChild(d)
-    card.appendChild(box); wrap.appendChild(card)
+  wrap.innerHTML = '';
+  proj.items.forEach((p, idx) => {
+    // Estructura colapsable
+    const details = el('details', 'project-collapsible');
+    if(idx === 0) details.setAttribute('open', ''); // Primer proyecto abierto por defecto
+    const summary = el('summary');
+    summary.innerHTML = `<h3>${p.titulo}</h3>`;
+    details.appendChild(summary);
+    const card = el('div','card project-card')
+    // Descripción
+    const d = el('p'); d.className = 'muted'; d.textContent = p.descripcion; card.appendChild(d)
+    // Carrusel de fotos
+    if(p.fotos && p.fotos.length > 0){
+      const photoWrap = el('div','carousel-wrap')
+      const photoCarousel = el('div','carousel photos-carousel')
+      p.fotos.forEach((foto,i)=>{
+        const img = el('img'); img.src = foto; img.alt = p.titulo + ' foto ' + (i+1);
+        img.className = 'carousel-img';
+        // Lightbox: click para ampliar
+        img.addEventListener('click', function(e){
+          e.stopPropagation();
+          const modal = document.getElementById('img-modal');
+          const modalImg = modal.querySelector('img');
+          modalImg.src = foto;
+          modalImg.alt = img.alt;
+          modal.style.display = 'flex';
+        });
+        photoCarousel.appendChild(img)
+      })
+      // Flechas
+      const prevBtn = el('button','carousel-arrow left'); prevBtn.innerHTML = '&#8592;';
+      const nextBtn = el('button','carousel-arrow right'); nextBtn.innerHTML = '&#8594;';
+      prevBtn.onclick = (e)=>{ e.stopPropagation(); photoCarousel.scrollBy({left:-300,behavior:'smooth'}) }
+      nextBtn.onclick = (e)=>{ e.stopPropagation(); photoCarousel.scrollBy({left:300,behavior:'smooth'}) }
+      photoWrap.appendChild(prevBtn)
+      photoWrap.appendChild(photoCarousel)
+      photoWrap.appendChild(nextBtn)
+      card.appendChild(photoWrap)
+    }
+    // Carrusel de videos
+    if(p.videos && p.videos.length > 0){
+      const videoWrap = el('div','carousel-wrap')
+      const videoCarousel = el('div','carousel videos-carousel')
+      p.videos.forEach((video,i)=>{
+        const iframe = document.createElement('iframe');
+        iframe.src = video.replace('watch?v=','embed/');
+        iframe.width = '100%';
+        iframe.height = '240';
+        iframe.frameBorder = '0';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        iframe.allowFullscreen = true;
+        iframe.className = 'carousel-video';
+        videoCarousel.appendChild(iframe)
+      })
+      // Flechas
+      const prevBtn = el('button','carousel-arrow left'); prevBtn.innerHTML = '&#8592;';
+      const nextBtn = el('button','carousel-arrow right'); nextBtn.innerHTML = '&#8594;';
+      prevBtn.onclick = (e)=>{ e.stopPropagation(); videoCarousel.scrollBy({left:-320,behavior:'smooth'}) }
+      nextBtn.onclick = (e)=>{ e.stopPropagation(); videoCarousel.scrollBy({left:320,behavior:'smooth'}) }
+      videoWrap.appendChild(prevBtn)
+      videoWrap.appendChild(videoCarousel)
+      videoWrap.appendChild(nextBtn)
+      card.appendChild(videoWrap)
+    }
+    details.appendChild(card);
+    wrap.appendChild(details);
   })
 }
 
@@ -136,4 +196,18 @@ document.addEventListener('DOMContentLoaded', ()=>{
       modalTopologia.style.display = 'none';
     });
   }
-})
+
+  // Modal para imagen ampliada en proyectos
+  const imgModal = document.getElementById('img-modal');
+  if(imgModal){
+    // Siempre ocultar el modal al cargar
+    imgModal.style.display = 'none';
+    imgModal.addEventListener('click', function(e){
+      if(e.target === imgModal || e.target.classList.contains('close-modal')){
+        imgModal.style.display = 'none';
+        imgModal.querySelector('img').src = '';
+      }
+    });
+  }
+  // (No hay modal de video)
+});
